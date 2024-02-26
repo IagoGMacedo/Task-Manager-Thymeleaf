@@ -1,4 +1,12 @@
-body{
-    padding: 10px
-    
-}
+.table thead th {
+    background-color: #977ae5; /* Cor vermelha para o fundo do cabeçalho */
+    border-color: #977ae5; /* Cor da borda do cabeçalho */
+  }
+
+  h4{
+    color: #977ae5;
+  }
+
+  button{
+    color: #977ae5;
+  }
