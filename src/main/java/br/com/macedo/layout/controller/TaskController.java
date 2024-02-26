@@ -34,9 +34,9 @@ public class TaskController {
     @GetMapping("/create")
     public ModelAndView home(){
         ModelAndView md = new ModelAndView("create");
-        md.addObject("task", new Task()); //criando objeto vazio pra não dar erro
-        md.addObject("message", new String()); //criando objeto vazio pra não dar erro
-        
+        //criando objetos vazios pra não dar erro
+        md.addObject("task", new Task()); 
+        md.addObject("message", new String()); 
         return md;
     }
 
@@ -73,7 +73,9 @@ public class TaskController {
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") Long id){
         taskService.delete(id);
-        return new ModelAndView("list");
+        ModelAndView mv = new ModelAndView("list");
+        mv.addObject("tasks", taskService.listAllTasks());
+        return mv;
     }
     
     
